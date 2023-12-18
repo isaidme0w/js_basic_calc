@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calcbody">
+        <div class="calcscreen">
+            <input type="text" id="calcsc" value="0">
+        </div>
+        <div class="btn-grid">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <button type="button" onclick="clr()">C</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="addNum(this)">7</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="addNum(this)">8</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="addNum(this)">9</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="split()">/</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="addNum(this)">4</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="addNum(this)">5</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="addNum(this)">6</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="multi()">*</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" onclick="addNum(this)">1</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="addNum(this)">2</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="addNum(this)">3</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="sub()">-</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" onclick="addNum(this)">0</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="equal()">=</button>
+                    </td>
+                    <td>
+                        <button type="button" onclick="sum()">+</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="calc.js"></script>
+</body>
+</html>
