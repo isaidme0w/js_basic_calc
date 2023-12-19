@@ -32,7 +32,7 @@ function clr() {
     res = null;
     modify = false;
     block = true;
-    operation = 1
+    operation = 1;
 }
 
 function sum() {
@@ -101,7 +101,7 @@ function calc() {
             if(res == null) {
                 res = num1 + num2;
             } else {
-                res += num2
+                res += num2;
             }
             inputElem.value = res;
             modify = true;
@@ -111,7 +111,7 @@ function calc() {
             if(res == null) {
                 res = num1 - num2;
             } else {
-                res -= num2
+                res -= num2;
             }
             inputElem.value = res;
             modify = true;
@@ -121,7 +121,7 @@ function calc() {
             if(res == null) {
                 res = num1 * num2;
             } else {
-                res *= num2
+                res *= num2;
             }
             inputElem.value = res;
             modify = true;
@@ -131,7 +131,7 @@ function calc() {
             if(res == null) {
                 res = num1 / num2;
             } else {
-                res /= num2
+                res /= num2;
             }
             inputElem.value = res;
             modify = true;
