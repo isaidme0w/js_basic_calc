@@ -1,10 +1,10 @@
 const inputElem = document.getElementById("calcsc");
 var num1 = null;
 var num2 = null;
-var res = null;
 var modify = false;
 var operation = 1;
-var block = false;
+var res = null;
+var block = true;
 
 inputElem.addEventListener("change", function(){
     let val = inputElem.value;
@@ -31,54 +31,67 @@ function clr() {
     num2 = null;
     res = null;
     modify = false;
+    block = true;
     operation = 1
 }
 
 function sum() {
-    operation = 1;
+    if(res != null) {
+        equal();
+    }
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
     } else {
         num2 = parseFloat(inputElem.value);
-        block = false;
         equal();
     }
+    operation = 1;
+    block = false;
 }
 function sub() {
-    operation = 2;
+    if(res != null) {
+        equal();
+    }
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
     } else {
         num2 = parseFloat(inputElem.value);
-        block = false;
         equal();
     }
+    operation = 2;
+    block = false;
 }
 
 function multi() {
-    operation = 3;
+    if(res != null) {
+        equal();
+    }
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
     } else {
         num2 = parseFloat(inputElem.value);
-        block = false;
         equal();
     }
+    operation = 3;
+    block = false;
 }
 
 function split() {
-    operation = 4;
+    if(res != null) {
+        equal();
+    }
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
     } else {
         num2 = parseFloat(inputElem.value);
-        block = false;
         equal();
     }
+    operation = 4;
+    block = false;
 }
 
 
@@ -88,7 +101,7 @@ function calc() {
             if(res == null) {
                 res = num1 + num2;
             } else {
-                res += num2;
+                res += num2
             }
             inputElem.value = res;
             modify = true;
@@ -98,7 +111,7 @@ function calc() {
             if(res == null) {
                 res = num1 - num2;
             } else {
-                res -= num2;
+                res -= num2
             }
             inputElem.value = res;
             modify = true;
@@ -108,7 +121,7 @@ function calc() {
             if(res == null) {
                 res = num1 * num2;
             } else {
-                res *= num2;
+                res *= num2
             }
             inputElem.value = res;
             modify = true;
@@ -118,7 +131,7 @@ function calc() {
             if(res == null) {
                 res = num1 / num2;
             } else {
-                res /= num2;
+                res /= num2
             }
             inputElem.value = res;
             modify = true;
