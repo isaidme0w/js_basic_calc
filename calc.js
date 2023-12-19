@@ -3,6 +3,8 @@ var num1 = null;
 var num2 = null;
 var res = null;
 var modify = false;
+var operation = 1;
+var block = false;
 
 inputElem.addEventListener("change", function(){
     let val = inputElem.value;
@@ -13,10 +15,10 @@ inputElem.addEventListener("change", function(){
 
 function addNum(btnElem) {
     if(modify) {
-        inputElem.value = 0;
+        inputElem.value = btnElem.innerHTML;
         modify = false;
     }
-    if(inputElem.value == 0) {
+    else if(inputElem.value == 0) {
         inputElem.value = btnElem.innerHTML;
     } else {
         inputElem.value += btnElem.innerHTML;
@@ -29,6 +31,7 @@ function clr() {
     num2 = null;
     res = null;
     modify = false;
+    operation = 1
 }
 
 function sum() {
@@ -36,9 +39,10 @@ function sum() {
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
-    } else if(num2 == null) {
+    } else {
         num2 = parseFloat(inputElem.value);
-        calc();
+        block = false;
+        equal();
     }
 }
 function sub() {
@@ -46,9 +50,10 @@ function sub() {
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
-    } else if(num2 == null) {
+    } else {
         num2 = parseFloat(inputElem.value);
-        calc();
+        block = false;
+        equal();
     }
 }
 
@@ -57,9 +62,10 @@ function multi() {
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
-    } else if(num2 == null) {
+    } else {
         num2 = parseFloat(inputElem.value);
-        calc();
+        block = false;
+        equal();
     }
 }
 
@@ -68,9 +74,10 @@ function split() {
     if(num1 == null) {
         num1 = parseFloat(inputElem.value);
         inputElem.value = 0;
-    } else if(num2 == null) {
+    } else {
         num2 = parseFloat(inputElem.value);
-        calc();
+        block = false;
+        equal();
     }
 }
 
@@ -84,8 +91,8 @@ function calc() {
                 res += num2;
             }
             inputElem.value = res;
-            num2 = null;
             modify = true;
+            block = true;
             break;
         case 2:
             if(res == null) {
@@ -94,8 +101,8 @@ function calc() {
                 res -= num2;
             }
             inputElem.value = res;
-            num2 = null;
             modify = true;
+            block = true;
             break;
         case 3:
             if(res == null) {
@@ -104,8 +111,8 @@ function calc() {
                 res *= num2;
             }
             inputElem.value = res;
-            num2 = null;
             modify = true;
+            block = true;
             break;
         case 4:
             if(res == null) {
@@ -114,11 +121,18 @@ function calc() {
                 res /= num2;
             }
             inputElem.value = res;
-            num2 = null;
             modify = true;
+            block = true;
             break;
         default:
             alert("Error has occured!");
             break;
+    }
+}
+
+function equal() {
+    if(num1 != null && !block) {
+        num2 = parseFloat(inputElem.value);
+        calc();
     }
 }
