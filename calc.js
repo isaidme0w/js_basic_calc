@@ -146,6 +146,16 @@ function calc() {
 function equal() {
     if(num1 != null && !block) {
         num2 = parseFloat(inputElem.value);
-        calc();
+        if(operation == 4) {
+            if(num2 != 0) {
+                calc();
+            }
+            else {
+                alert("Wtf are u doin' m8? Didn't they teach ya at school not to divide by 0?? huh???");
+            }
+        }
+        else {
+            calc();
+        }
     }
 }
