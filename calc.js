@@ -79,7 +79,7 @@ function multi() {
     block = false;
 }
 
-function split() {
+function div() {
     if(res != null) {
         equal();
     }
